@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { WeatherService } from './services/weather.service';
 
 @Component({
@@ -7,13 +8,12 @@ import { WeatherService } from './services/weather.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  location = { cityName: '', countryCode: '' };
+  location = { cityName: 'Bogota', countryCode: 'Col' };
   weather: any;
+  zone: any;
   //weather: Object;
 
-  constructor(
-    private weatherService: WeatherService,
-  ) {}
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
     this.getWeather(this.location.cityName, this.location.countryCode);
@@ -24,6 +24,10 @@ export class AppComponent implements OnInit {
       (res) => {
         console.log(res);
         this.weather = res;
+
+        var localDay = this.weather.timezone;
+        var time = (this.zone = new Date(new Date().getTime() + localDay));
+        this.zone = moment(time).format('MM-DD-YYYY ; hh:mm');
       },
       (err) => {
         console.log(err);
@@ -32,7 +36,7 @@ export class AppComponent implements OnInit {
   }
 
   submitLocation(cityName: HTMLInputElement, countryCode: HTMLInputElement) {
-    if (cityName.value && countryCode.value) {
+    if (cityName.value || countryCode.value) {
       this.getWeather(cityName.value, countryCode.value);
 
       cityName.value = '';
