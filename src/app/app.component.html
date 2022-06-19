@@ -1,18 +1,19 @@
 <div class="weather-app">
-    <div class="container">
-        <h3 class="brand">The weather</h3>
+    <div class="container" *ngIf="weather">
+        <h3 class="brand">The Weather</h3>
         <div class="weather-time">
-            <h1 class="temp">16</h1>
-            <div class="city-time">
-                <h1 class="name">London</h1>
-                <small>
-                    <span class="time">06:09</span>
-                    <span class="date">Monday</span>
+            <h1 class="temp">{{weather.main.temp}} °C</h1>
+            <div class="weather-container">
+                <div class="city-time">
+                    <h1 class="name">{{weather.name}}</h1>
+                    <small>
+                    <span class="time">{{zone}}</span>
                 </small>
-            </div>
-            <div class="weather">
-                <img src="icon" alt="icon">
-                <span class="condition">Cloudy</span>
+                </div>
+                <div class="weather">
+                    <img src="icon" alt="icon">
+                    <span class="condition">Cloudy</span>
+                </div>
             </div>
         </div>
     </div>
@@ -26,14 +27,34 @@
                 <input type="text" class="search" placeholder="City Code" #cityCode>
             </div>
             <button type="submit" class="submit">
-                <i class="fas fa-search ">as</i>
+                <i class="fas fa-search "></i>
             </button>
         </form>
         <ul class="details">
             <h4>Weather Details</h4>
             <li>
-                <span>Cloudy</span>
-                <span class="cloud">59%</span>
+                <span>Latitude</span>
+                <span class="latitude">{{weather.coord.lat}}</span>
+            </li>
+            <li>
+                <span>Longitude</span>
+                <span class="longitude">{{weather.coord.lon}}</span>
+            </li>
+            <li>
+                <span>Humidity</span>
+                <span class="humidity">{{weather.main.humidity}}</span>
+            </li>
+            <li>
+                <span>Pressure</span>
+                <span class="pressure">{{weather.main.pressure}}</span>
+            </li>
+            <li>
+                <span>General Description</span>
+                <span class="general-description">{{weather.weather[0].main}}</span>
+            </li>
+            <li>
+                <span>Detailed Description</span>
+                <span class="detailed-description">{{weather.weather[0].description}}</span>
             </li>
         </ul>
     </div>
