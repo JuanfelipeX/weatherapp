@@ -39,9 +39,9 @@ h3 {
     padding: 2em 3em 4em 3em;
 }
 
-.container>div {
+.weather-time>div {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -50,7 +50,7 @@ h3 {
 }
 
 .weather-time {
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 .city-time,
@@ -153,7 +153,11 @@ h3 {
 .details li {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2em;
+    font-size: 1.4em;
+}
+
+.details li span {
+    margin-right: 100px;
 }
 
 @media screen and (max-width:1100px) {
@@ -183,6 +187,6 @@ h3 {
 
 @media screen and (max-width:600px) {
     .weather-app {
-        font-size: 9px;
+        font-size: 8px;
     }
 }
