@@ -47,4 +47,23 @@ export class AppComponent implements OnInit {
     cityName.focus();
     return false;
   }
+
+  changeBackground() {
+    let spanEl = <HTMLElement>document.querySelector('.weather-app');
+    let weatherMain = this.weather.weather[0].main;
+
+    if (weatherMain == 'Rain') {
+      spanEl.style.backgroundImage = "url('../assets/Rain.jpg')";
+    } else if (weatherMain == 'Drizzle') {
+      spanEl.style.backgroundImage = "url('../assets/Drizzle.jpg')";
+    } else if (weatherMain == 'Thunderstorm') {
+      spanEl.style.backgroundImage = "url('../assets/Thunderstorm.jpg')";
+    }  else if (weatherMain == 'Snow') {
+      spanEl.style.backgroundImage = "url('../assets/Snow.jpg')";
+    } else if (weatherMain == 'Clear') {
+      spanEl.style.backgroundImage = "url('../assets/Clear.jpg')";
+    } else if (weatherMain == 'Clouds') {
+      spanEl.style.backgroundImage = "url('../assets/Clouds.jpg')";
+    }
+  }
 }
