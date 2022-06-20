@@ -1,4 +1,4 @@
-<div class="weather-app">
+<div class="weather-app" [class]="changeBackground()">
     <div class="container" *ngIf="weather">
         <h3 class="brand">The Weather</h3>
         <div class="weather-time">
@@ -11,8 +11,8 @@
                 </small>
                 </div>
                 <div class="weather">
-                    <img src="icon" alt="icon">
-                    <span class="condition">Cloudy</span>
+                    <i class="iconWeather" [class]="changeIconWeather()"></i>
+                    <span class="condition">{{weather.weather[0].main}}</span>
                 </div>
             </div>
         </div>
@@ -47,10 +47,6 @@
             <li>
                 <span>Pressure</span>
                 <span class="pressure">{{weather.main.pressure}}</span>
-            </li>
-            <li>
-                <span>General Description</span>
-                <span class="general-description">{{weather.weather[0].main}}</span>
             </li>
             <li>
                 <span>Detailed Description</span>
