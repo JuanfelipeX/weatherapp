@@ -25,9 +25,7 @@ export class AppComponent implements OnInit {
         console.log(res);
         this.weather = res;
 
-        var localDay = this.weather.timezone;
-        var time = (this.zone = new Date(new Date().getTime() + localDay));
-        this.zone = moment(time).format('MM-DD-YYYY ; hh:mm');
+        this.findingTime();
       },
       (err) => {
         console.log(err);
@@ -65,6 +63,13 @@ export class AppComponent implements OnInit {
     } else if (weatherMain == 'Clouds') {
       spanEl.style.backgroundImage = "url('../assets/Clouds.jpg')";
     }
+  }
+
+  findingTime() {
+    var localDay = this.weather.dt;
+    var time = (this.zone = new Date(new Date().getTime()));
+    this.zone = moment(time).format('MM-DD-YYYY ; hh:mm');
+    console.log(localDay )
   }
 
   changeIconWeather() {
