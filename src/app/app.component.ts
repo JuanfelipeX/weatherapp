@@ -58,12 +58,31 @@ export class AppComponent implements OnInit {
       spanEl.style.backgroundImage = "url('../assets/Drizzle.jpg')";
     } else if (weatherMain == 'Thunderstorm') {
       spanEl.style.backgroundImage = "url('../assets/Thunderstorm.jpg')";
-    }  else if (weatherMain == 'Snow') {
+    } else if (weatherMain == 'Snow') {
       spanEl.style.backgroundImage = "url('../assets/Snow.jpg')";
     } else if (weatherMain == 'Clear') {
       spanEl.style.backgroundImage = "url('../assets/Clear.jpg')";
     } else if (weatherMain == 'Clouds') {
       spanEl.style.backgroundImage = "url('../assets/Clouds.jpg')";
+    }
+  }
+
+  changeIconWeather() {
+    let spanEl = <HTMLElement>document.querySelector('.iconWeather');
+    let weatherMain = this.weather.weather[0].main;
+
+    if (weatherMain == 'Rain') {
+      spanEl.setAttribute('class', 'fa fa-cloud-rain iconWeather');
+    } else if (weatherMain == 'Drizzle') {
+      spanEl.setAttribute('class', 'fa fa-umbrella iconWeather');
+    } else if (weatherMain == 'Thunderstorm') {
+      spanEl.setAttribute('class', 'fa fa-bolt iconWeather');
+    } else if (weatherMain == 'Snow') {
+      spanEl.setAttribute('class', 'fa fa-snowflake iconWeather');
+    } else if (weatherMain == 'Clear') {
+      spanEl.setAttribute('class', 'fa fa-sun iconWeather');
+    } else if (weatherMain == 'Clouds') {
+      spanEl.setAttribute('class', 'fa fa-cloud iconWeather');
     }
   }
 }
