@@ -43,6 +43,14 @@ How to pass an angular project to a pwa: https://www.youtube.com/watch?v=jI0eR95
 
 LINK TO THE APLICATION: https://weatherapp-angular-c5caf.web.app/
 
+DESKTOP
+
 ![image](https://user-images.githubusercontent.com/72418729/174692256-55d5ba71-4bc0-4ae7-b979-521256d3581a.png)
+
+PHONE
+
+![image](https://user-images.githubusercontent.com/72418729/174692492-5216d495-536d-4d79-90e1-169b098a85f2.png)
+
+
 
 
