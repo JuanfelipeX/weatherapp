@@ -39,8 +39,9 @@ Design: https://www.youtube.com/watch?v=QGzgE7jWDxk&list=PLgPhsPVnplLgoVNRzKd0_j
 
 API: https://openweathermap.org/api/one-call-3
 
-LINK TO THE APLICATION: https://weatherapp-angular-c5caf.web.app/
+How to pass an angular project to a pwa: https://www.youtube.com/watch?v=jI0eR95U0Z0
 
+LINK TO THE APLICATION: https://weatherapp-angular-c5caf.web.app/
 
 ![image](https://user-images.githubusercontent.com/72418729/174692256-55d5ba71-4bc0-4ae7-b979-521256d3581a.png)
 
